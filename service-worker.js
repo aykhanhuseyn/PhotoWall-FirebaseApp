@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/PhotoWall-FirebaseApp/precache-manifest.d04bc4655f31b56075c3a41da694ee34.js"
+  "/PhotoWall-FirebaseApp/precache-manifest.353e157734245580509ecceeb2af2018.js"
 );
 
 self.addEventListener('message', (event) => {
