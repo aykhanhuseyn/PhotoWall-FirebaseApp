@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { routes } from './Main';
 
 class AddPhoto extends Component {
   constructor() {
@@ -17,8 +18,7 @@ class AddPhoto extends Component {
         imageLink: link
       };
       this.props.startAddingPost(newPost);
-      // this.props.addPost(newPost);
-      this.props.onHistory.push('/');
+      this.props.onHistory.push(routes.home);
     }
   }
 

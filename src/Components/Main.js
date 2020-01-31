@@ -4,6 +4,13 @@ import AddPhoto from './AddPhoto';
 import { Route, Link } from 'react-router-dom';
 import Single from '../Components/Single';
 
+export const routes = {
+  home: '/PhotoWall-FirebaseApp/',
+  addphoto: '/PhotoWall-FirebaseApp/AddPhoto/',
+  single: '/PhotoWall-FirebaseApp/Single/',
+  singleid: '/PhotoWall-FirebaseApp/Single/:id/'
+};
+
 class Main extends Component {
   componentDidMount() {
     this.props.startLoadingPosts();
@@ -14,11 +21,11 @@ class Main extends Component {
     return (
       <div>
         <h1>
-          <Link to="/">PhotoWall</Link>
+          <Link to={routes.home}>PhotoWall</Link>
         </h1>
         <Route
           exact
-          path="/"
+          path={routes.home}
           render={() => (
             <div>
               <PhotoWall {...this.props} />
@@ -26,14 +33,14 @@ class Main extends Component {
           )}
         />
         <Route
-          path="/AddPhoto"
+          path={routes.addphoto}
           render={({ history }) => (
             <AddPhoto {...this.props} onHistory={history} />
           )}
         />
 
         <Route
-          path="/Single/:id"
+          path={routes.singleid}
           render={params => <Single {...this.props} {...params} />}
         ></Route>
       </div>

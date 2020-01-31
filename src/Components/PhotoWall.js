@@ -2,12 +2,13 @@ import React from 'react';
 import Photo from './Photo';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { routes } from './Main';
 
 function PhotoWall(props) {
   return (
     <div>
       <div>
-        <Link className="addIcon" to="/AddPhoto" />
+        <Link className="addIcon" to={routes.addphoto} />
       </div>
       <div className="photoGrid">
         {props.posts
