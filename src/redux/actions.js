@@ -33,11 +33,9 @@ export function startRemovingPost(id) {
   return dispatch => {
     return database
       .ref(`post/${id}`)
-      .update({
-        [`posts/${id}`]: null,
-        [`comments/${id}`]: null
-      })
+      .remove()
       .then(() => {
+        database.ref(`comments/${id}`).remove();
         dispatch(removePost(id));
       })
       .catch(error => console.log(error));
